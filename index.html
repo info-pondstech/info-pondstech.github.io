@@ -926,8 +926,17 @@
     <script>
     new WOW().init();
     $(document).ready(function() {
+        var windowHieght = 8902;
+
         $(window).on("scroll", function() {
             var heightTop = $(this).scrollTop();
+            if(heightTop > 98902) {
+                heightTop = 8902;
+            }
+            else if(heightTop < 0) {
+                heightTop = 0;
+            }
+
             $(".clock-auto").css("top", heightTop);
         });
     });

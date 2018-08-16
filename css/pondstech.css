@@ -26,9 +26,10 @@
 .clock-auto {
     width: 360px;
     height: 100%;
-    right: -100%;
-    transform: translate(-360px, -150px);
-    position: relative;
+    right: 0px;
+    top: 0px;
+    transform: translate(0px, -220px);
+    position: absolute;
 }
 
 #panel li {
@@ -69,4 +70,7 @@ img.mix-img {
     position: absolute;
     bottom: 10px;
     right: 90px;
+}
+.just-clock-position {
+    position: relative;
 }

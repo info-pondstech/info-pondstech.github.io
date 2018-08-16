@@ -23,6 +23,222 @@
 </head>
 
 <body>
+    <div class="clock-auto">
+        <ul id="panel">
+            <li class="small-clock-li">
+                <img src=""  class="pic01"> <img src=""  class="pic02">
+            </li>
+            <li class="small-clock-li">
+                <img src=""  class="pic01"> <img src=""  class="pic02">
+            </li>
+            <li class="small-clock-li">
+                <img src=""  class="pic01"> <img src=""  class="pic02">
+            </li>
+            <li class="small-clock-li">
+                <img src=""  class="pic01"> <img src=""  class="pic02">
+            </li>
+            <li class="small-clock-li">
+                <img src="" >
+
+            </li>
+            <li class="small-clock-li">
+                <img src=""  class="pic01"> <img src=""  class="pic02">
+            </li>
+            <li class="small-clock-li">
+                <img src=""  class="pic01"> <img src=""  class="pic02">
+            </li>
+            <li class="small-clock-li">
+                <img src="" >
+
+            </li>
+            <li class="small-clock-li">
+                <img src=""  class="pic01"> <img src=""  class="pic02">
+            </li>
+            <li class="small-clock-li">
+                <img src=""  class="pic01"> <img src=""  class="pic02">
+            </li>
+            <li class="small-clock-li">
+                <img src="" >
+
+            </li>
+            <li class="small-clock-li">
+                <img src=""  class="pic01"> <img src=""  class="pic02">
+            </li>
+            <li class="small-clock-li">
+                <img src=""  class="pic01"> <img src=""  class="pic02">
+            </li>
+            <li class="small-clock-li">
+                <img src="" >
+
+            </li>
+            <li class="small-clock-li">
+                <img src=""  class="pic01"> <img src=""  class="pic02">
+            </li>
+            <li class="small-clock-li">
+                <img src=""  class="pic01"> <img src=""  class="pic02">
+            </li>
+            <li class="small-clock-li">
+                <img src="" >
+
+            </li>
+            <li class="small-clock-li">
+                <img src=""  class="pic01"> <img src=""  class="pic02">
+            </li>
+            <li class="small-clock-li">
+                <img src=""  class="pic01"> <img src=""  class="pic02">
+            </li>
+            <li class="small-clock-li">
+                <img src="" >
+
+            </li>
+            <li class="small-clock-li">
+                <img src="" >
+
+            </li>
+            <li class="small-clock-li">
+                <img src="" >
+
+            </li>
+        </ul>
+        <script type="text/javascript">
+            window.onload=function(){
+                var arr=['images/0.png','images/1.png','images/2.png','images/3.png',
+                'images/4.png','images/5.png','images/6.png','images/7.png','images/8.png',
+                'images/9.png','images/mao.png','images/year.png','images/month.png',
+                'images/day.png','images/one.png','images/two.png','images/three.png','images/four.png','images/five.png','images/six.png','images/star.png','images/week.png',]
+                var panel=document.getElementById("panel");
+                var aLi=panel.getElementsByTagName("li");
+                var nTime=null;
+                var str=null;
+                var nstr;
+                for(var i=0;i<aLi.length;i++){
+                    aLi[i].style.left=14*i+'px';
+                }
+
+                function showTime1(){
+                    var iNow=new Date();
+                    var nHours=iNow.getHours();
+                    var nMinutes=iNow.getMinutes();
+                    var nSecondes=iNow.getSeconds();
+                    var year=iNow.getFullYear();
+                    var month = iNow.getMonth() + 1;
+                    var dayNow = iNow.getDate();
+                    var week = iNow.getDay();
+                    str=toYear(year) + "年" +  toTwo(month) + "月" +  toTwo(dayNow)+ "日" + toTwo(nHours)+':'+toTwo(nMinutes)+':'+toTwo(nSecondes) + "星" + "期" + toYear(week);
+                }
+
+                function showTime2(){
+                    var iNow=new Date();
+                    nTime=iNow.getTime()+1000;
+                    iNew=new Date(nTime);
+                    var year=iNow.getFullYear();
+                    var tHours=iNew.getHours();
+                    var tMinutes=iNew.getMinutes();
+                    var tSecondes=iNew.getSeconds();
+                    var month = iNew.getMonth() + 1;
+                    var dayNow = iNew.getDate();
+                    var week = iNew.getDay();
+                    nstr=toYear(year) + "年" + toTwo(month) + "月" +  toTwo(dayNow) + "日" + toTwo(tHours)+':'+toTwo(tMinutes)+':'+toTwo(tSecondes) + "星" + "期" + toYear(week);
+                }
+
+                showTime1();
+                showTime2();
+                setInterval(function(){
+                    showTime1();
+                    showTime2();
+                },1000);
+
+                function initial(aLi){
+                    for(var i=0;i<aLi.length;i++){
+                    if(i==4) {
+                        aLi[i].getElementsByTagName("img")[0].src=arr[11];
+                    }
+                    else if(i==7) {
+                        aLi[i].getElementsByTagName("img")[0].src=arr[12];
+                    }
+                    else if(i==10) {
+                        aLi[i].getElementsByTagName("img")[0].src=arr[13];
+                    }
+                    else if(i==13) {
+                        aLi[i].getElementsByTagName("img")[0].src=arr[10];
+                    }
+                    else if(i==16) {
+                        aLi[i].getElementsByTagName("img")[0].src=arr[10];
+                    }
+                    else if(i==19) {
+                        aLi[i].getElementsByTagName("img")[0].src=arr[20];
+                    }
+                    else if(i==20) {
+                        aLi[i].getElementsByTagName("img")[0].src=arr[21];
+                    }
+                    else if(i==21) {
+                        aLi[i].getElementsByTagName("img")[0].src=arr[parseInt(str.charAt(i)) + 13];
+                    }
+                    else {
+                        aLi[i].getElementsByTagName("img")[0].src=arr[str.charAt(i)];
+                        aLi[i].getElementsByTagName("img")[1].src=arr[nstr.charAt(i)];
+                    }
+                    }
+                }
+
+                initial(aLi);
+
+                timeRoll(aLi,0);
+                timeRoll(aLi,1);
+                timeRoll(aLi,3);
+                timeRoll(aLi,4);
+                timeRoll(aLi,6);
+                timeRoll(aLi,7);
+                timeRoll(aLi,8);
+                timeRoll(aLi,9);
+                timeRoll(aLi,10);
+                timeRoll(aLi,11);
+                timeRoll(aLi,12);
+                timeRoll(aLi,13);
+                timeRoll(aLi,14);
+                timeRoll(aLi,15);
+                timeRoll(aLi,16);
+                timeRoll(aLi,17);
+                timeRoll(aLi,18);
+                timeRoll(aLi,19);
+                timeRoll(aLi,20);
+                timeRoll(aLi,21);
+
+                function timeRoll(obj,i){
+                    setInterval(function(){
+                        var pNumber=str.charAt(i);
+                        var tNumber=nstr.charAt(i);
+                        var pImg=obj[i].getElementsByTagName("img")[0];
+                            var nImg=obj[i].getElementsByTagName("img")[1];
+                        if(pNumber!==tNumber&&parseInt(getStyle(nImg,'top'))==23){
+
+                            nImg.src=arr[nstr.charAt(i)];
+                            doMove(nImg,'top',5,0,function(){
+
+                            });
+                            doMove(pImg,'top',5,-23,function(){
+                                    pImg.style.top='23px';
+                                    pImg.src=arr[str.charAt(i)];
+
+                            });
+
+                        }else if(pNumber!==tNumber&&parseInt(getStyle(pImg,'top'))==23){
+
+                            pImg.src=arr[nstr.charAt(i)];
+                            doMove(pImg,'top',5,0,function(){
+
+                            });
+                            doMove(nImg,'top',5,-23,function(){
+                                    nImg.style.top='23px';
+                                    nImg.src=arr[str.charAt(i)];
+
+                            });
+                        }
+                    },1000)
+                };
+            }
+        </script>
+    </div>
     <div class="pushWrapper">
         <!-- Header (shown on mobile only) -->
         <header class="pageHeader">
@@ -100,223 +316,6 @@
                         <i class="step icon-diamond size-36"></i>
                         <span class="seconday just-clock-position">
                             Shaanxi PondsTech Co., Ltd
-                            <div class="clock-auto">
-                                <ul id="panel">
-                                    <li class="small-clock-li">
-                                        <img src=""  class="pic01"> <img src=""  class="pic02">
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src=""  class="pic01"> <img src=""  class="pic02">
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src=""  class="pic01"> <img src=""  class="pic02">
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src=""  class="pic01"> <img src=""  class="pic02">
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src="" >
-
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src=""  class="pic01"> <img src=""  class="pic02">
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src=""  class="pic01"> <img src=""  class="pic02">
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src="" >
-
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src=""  class="pic01"> <img src=""  class="pic02">
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src=""  class="pic01"> <img src=""  class="pic02">
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src="" >
-
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src=""  class="pic01"> <img src=""  class="pic02">
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src=""  class="pic01"> <img src=""  class="pic02">
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src="" >
-
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src=""  class="pic01"> <img src=""  class="pic02">
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src=""  class="pic01"> <img src=""  class="pic02">
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src="" >
-
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src=""  class="pic01"> <img src=""  class="pic02">
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src=""  class="pic01"> <img src=""  class="pic02">
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src="" >
-
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src="" >
-
-                                    </li>
-                                    <li class="small-clock-li">
-                                        <img src="" >
-
-                                    </li>
-                                </ul>
-                                <script type="text/javascript">
-                                    window.onload=function(){
-                                        var arr=['images/0.png','images/1.png','images/2.png','images/3.png',
-                                        'images/4.png','images/5.png','images/6.png','images/7.png','images/8.png',
-                                        'images/9.png','images/mao.png','images/year.png','images/month.png',
-                                        'images/day.png','images/one.png','images/two.png','images/three.png','images/four.png','images/five.png','images/six.png','images/star.png','images/week.png',]
-                                        var panel=document.getElementById("panel");
-                                        var aLi=panel.getElementsByTagName("li");
-                                        var nTime=null;
-                                        var str=null;
-                                        var nstr;
-                                        for(var i=0;i<aLi.length;i++){
-                                            aLi[i].style.left=14*i+'px';
-                                        }
-
-                                        function showTime1(){
-                                            var iNow=new Date();
-                                            var nHours=iNow.getHours();
-                                            var nMinutes=iNow.getMinutes();
-                                            var nSecondes=iNow.getSeconds();
-                                            var year=iNow.getFullYear();
-                                            var month = iNow.getMonth() + 1;
-                                            var dayNow = iNow.getDate();
-                                            var week = iNow.getDay();
-                                            str=toYear(year) + "年" +  toTwo(month) + "月" +  toTwo(dayNow)+ "日" + toTwo(nHours)+':'+toTwo(nMinutes)+':'+toTwo(nSecondes) + "星" + "期" + toYear(week);
-                                        }
-
-                                        function showTime2(){
-                                            var iNow=new Date();
-                                            nTime=iNow.getTime()+1000;
-                                            iNew=new Date(nTime);
-                                            var year=iNow.getFullYear();
-                                            var tHours=iNew.getHours();
-                                            var tMinutes=iNew.getMinutes();
-                                            var tSecondes=iNew.getSeconds();
-                                            var month = iNew.getMonth() + 1;
-                                            var dayNow = iNew.getDate();
-                                            var week = iNew.getDay();
-                                            nstr=toYear(year) + "年" + toTwo(month) + "月" +  toTwo(dayNow) + "日" + toTwo(tHours)+':'+toTwo(tMinutes)+':'+toTwo(tSecondes) + "星" + "期" + toYear(week);
-                                        }
-
-                                        showTime1();
-                                        showTime2();
-                                        setInterval(function(){
-                                            showTime1();
-                                            showTime2();
-                                        },1000);
-
-                                        function initial(aLi){
-                                            for(var i=0;i<aLi.length;i++){
-                                            if(i==4) {
-                                                aLi[i].getElementsByTagName("img")[0].src=arr[11];
-                                            }
-                                            else if(i==7) {
-                                                aLi[i].getElementsByTagName("img")[0].src=arr[12];
-                                            }
-                                            else if(i==10) {
-                                                aLi[i].getElementsByTagName("img")[0].src=arr[13];
-                                            }
-                                            else if(i==13) {
-                                                aLi[i].getElementsByTagName("img")[0].src=arr[10];
-                                            }
-                                            else if(i==16) {
-                                                aLi[i].getElementsByTagName("img")[0].src=arr[10];
-                                            }
-                                            else if(i==19) {
-                                                aLi[i].getElementsByTagName("img")[0].src=arr[20];
-                                            }
-                                            else if(i==20) {
-                                                aLi[i].getElementsByTagName("img")[0].src=arr[21];
-                                            }
-                                            else if(i==21) {
-                                                aLi[i].getElementsByTagName("img")[0].src=arr[parseInt(str.charAt(i)) + 13];
-                                            }
-                                            else {
-                                                aLi[i].getElementsByTagName("img")[0].src=arr[str.charAt(i)];
-                                                aLi[i].getElementsByTagName("img")[1].src=arr[nstr.charAt(i)];
-                                            }
-                                            }
-                                        }
-
-                                        initial(aLi);
-
-                                        timeRoll(aLi,0);
-                                        timeRoll(aLi,1);
-                                        timeRoll(aLi,3);
-                                        timeRoll(aLi,4);
-                                        timeRoll(aLi,6);
-                                        timeRoll(aLi,7);
-                                        timeRoll(aLi,8);
-                                        timeRoll(aLi,9);
-                                        timeRoll(aLi,10);
-                                        timeRoll(aLi,11);
-                                        timeRoll(aLi,12);
-                                        timeRoll(aLi,13);
-                                        timeRoll(aLi,14);
-                                        timeRoll(aLi,15);
-                                        timeRoll(aLi,16);
-                                        timeRoll(aLi,17);
-                                        timeRoll(aLi,18);
-                                        timeRoll(aLi,19);
-                                        timeRoll(aLi,20);
-                                        timeRoll(aLi,21);
-
-                                        function timeRoll(obj,i){
-                                            setInterval(function(){
-                                                var pNumber=str.charAt(i);
-                                                var tNumber=nstr.charAt(i);
-                                                var pImg=obj[i].getElementsByTagName("img")[0];
-                                                    var nImg=obj[i].getElementsByTagName("img")[1];
-                                                if(pNumber!==tNumber&&parseInt(getStyle(nImg,'top'))==23){
-
-                                                    nImg.src=arr[nstr.charAt(i)];
-                                                    doMove(nImg,'top',5,0,function(){
-
-                                                    });
-                                                    doMove(pImg,'top',5,-23,function(){
-                                                            pImg.style.top='23px';
-                                                            pImg.src=arr[str.charAt(i)];
-
-                                                    });
-
-                                                }else if(pNumber!==tNumber&&parseInt(getStyle(pImg,'top'))==23){
-
-                                                    pImg.src=arr[nstr.charAt(i)];
-                                                    doMove(pImg,'top',5,0,function(){
-
-                                                    });
-                                                    doMove(nImg,'top',5,-23,function(){
-                                                            nImg.style.top='23px';
-                                                            nImg.src=arr[str.charAt(i)];
-
-                                                    });
-                                                }
-                                            },1000)
-                                        };
-                                    }
-                                </script>
-                            </div>
-
                         </span>
                         <span class="ponds-inline-block"><img class="logo-top" src="images/logo-white.png" />陕西创潭防务科技有限公司</span>
                         </h1>
@@ -843,10 +842,17 @@
                                 </div>
                                 <h3 class="team-member-title">
                         <span class="seconday">商务合作</span>
-                    </h3>
+                                </h3>
                                 <div class="team-member-text content-template">
                                     <p>任何需求或者合作，请发送邮件到&nbsp;:&nbsp;&nbsp;info@pondstech.com，</p>
                                     <p>我们恭候您的咨询。</p>
+                                </div>
+                                <br />
+                                <div class="address-diy">
+                                    <h2>
+                                    <span class="seconday">联系地址:</span>
+                                    <span>陕西省西安市沣东新城建章路北段石化社区1号5幢1单元10602室</span>
+                                    </h2>
                                 </div>
                             </li>
                         </ul>
@@ -865,27 +871,7 @@
                         <!-- Form Area -->
                         <div class="contact-form">
                             <!-- Form -->
-                            <br />
                             <form id="contact-us" method="post" action="contact.php">
-                                <!-- Left Inputs -->
-                                <div class="col-xs-6 ">
-                                    <!-- Name -->
-                                    <br>
-                                    <!-- <input type="text" name="name" id="name" required="required" class="form" placeholder="Name" /> -->
-                                    <!-- Email -->
-                                    <!-- <input type="email" name="email" id="email" required="required" class="form" placeholder="Email" /> -->
-                                    <!-- secondayject -->
-                                    <!-- <input type="text" name="secondayject" id="secondayject" required="required" class="form" placeholder="secondayject" /> -->
-                                </div>
-                                <!-- End Left Inputs -->
-                                <!-- Right Inputs -->
-                                <div class="col-xs-6">
-                                    <!-- Message -->
-                                    <br>
-                                    <!-- <textarea name="message" id="message" class="form textarea" placeholder="Message"></textarea> -->
-                                </div>
-                                <!-- End Right Inputs -->
-                                <!-- Bottom secondaymit -->
                                 <div class="relative fullwidth col-xs-12">
                                     <!-- Send Button -->
                                     <button type="button" id="secondaymit" name="secondaymit" class="form-btn semibold">联系我们</button>
@@ -939,6 +925,12 @@
     <script type="text/javascript" src="js/miaov.js"></script>
     <script>
     new WOW().init();
+    $(document).ready(function() {
+        $(window).on("scroll", function() {
+            var heightTop = $(this).scrollTop();
+            $(".clock-auto").css("top", heightTop);
+        });
+    });
     </script>
 </body>
 

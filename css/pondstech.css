@@ -1,3 +1,12 @@
+body {
+    position: relative;
+}
+
+.address-diy {
+    font-size: 12px;
+}
+
+
 .contant-us-email {
     margin-left: 60px;
     margin-top: 12px;
@@ -28,8 +37,8 @@
     height: 100%;
     right: 0px;
     top: 0px;
-    transform: translate(0px, -220px);
     position: absolute;
+    z-index: 99999;
 }
 
 #panel li {
@@ -71,6 +80,7 @@ img.mix-img {
     bottom: 10px;
     right: 90px;
 }
+
 .just-clock-position {
     position: relative;
 }
